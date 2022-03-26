@@ -8,7 +8,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.accessibilityservice.AccessibilityServiceInfo;
 
-import com.reactnativemonthpicker.DatePickerPackage;
+import com.reactnativemonthpicker.MonthPickerPackage;
 import com.reactnativemonthpicker.Utils;
 import com.reactnativemonthpicker.pickers.Picker;
 
@@ -18,7 +18,7 @@ import java.util.List;
 import android.view.accessibility.AccessibilityNodeInfo;
 
 public class Accessibility {
-    private final static AccessibilityManager systemManager = (AccessibilityManager) DatePickerPackage.context
+    private final static AccessibilityManager systemManager = (AccessibilityManager) MonthPickerPackage.context
             .getApplicationContext().getSystemService(Context.ACCESSIBILITY_SERVICE);
 
     private static Locale mLocale = Locale.getDefault();

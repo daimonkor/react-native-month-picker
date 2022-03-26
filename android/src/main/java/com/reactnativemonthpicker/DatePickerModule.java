@@ -25,7 +25,7 @@ public class DatePickerModule extends ReactContextBaseJavaModule {
   }
 
   private View withTopMargin(PickerView view) {
-    LinearLayout linearLayout = new LinearLayout(DatePickerPackage.context);
+    LinearLayout linearLayout = new LinearLayout(MonthPickerPackage.context);
     linearLayout.setLayoutParams(new LinearLayout.LayoutParams(
       LinearLayout.LayoutParams.MATCH_PARENT,
       LinearLayout.LayoutParams.WRAP_CONTENT
@@ -37,6 +37,6 @@ public class DatePickerModule extends ReactContextBaseJavaModule {
 
   @Override
   public String getName() {
-    return "RNDatePicker";
+    return "RNMonthPicker";
   }
 }

@@ -27,7 +27,7 @@ public class PickerView extends RelativeLayout {
     private ArrayList<String> updatedProps = new ArrayList<>();
 
     public PickerView(ViewGroup.LayoutParams layoutParams) {
-        super(DatePickerPackage.context);
+        super(MonthPickerPackage.context);
         this.layoutParams = layoutParams;
     }
 

@@ -12,11 +12,11 @@ import java.util.Calendar;
 public class Emitter {
 
     private static RCTEventEmitter eventEmitter(){
-        return DatePickerPackage.context.getJSModule(RCTEventEmitter.class);
+        return MonthPickerPackage.context.getJSModule(RCTEventEmitter.class);
     }
 
     private static DeviceEventManagerModule.RCTDeviceEventEmitter deviceEventEmitter(){
-        return DatePickerPackage.context.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class);
+        return MonthPickerPackage.context.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class);
     }
 
     public static void onDateChange(Calendar date, View view) {

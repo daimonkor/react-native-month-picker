@@ -20,7 +20,7 @@ import java.util.TimeZone;
 public class Utils {
 
     public static boolean deviceUsesAmPm(){
-        return !DateFormat.is24HourFormat(DatePickerPackage.context);
+        return !DateFormat.is24HourFormat(MonthPickerPackage.context);
     }
 
     public static String printToday(Locale locale) {
@@ -92,13 +92,13 @@ public class Utils {
     }
 
     public static String getLocalisedStringFromResources(Locale locale, String tagName) {
-        ReactApplicationContext context = DatePickerPackage.context;
+        ReactApplicationContext context = MonthPickerPackage.context;
         int selectedKey = context.getResources().getIdentifier(tagName,"string", context.getPackageName());
         String localisedText = LocaleUtils.getLocaleStringResource(locale, selectedKey, context);
         return localisedText;
     }
 
     public static int toDp(int pixels){
-        return (int) (pixels * DatePickerPackage.context.getResources().getDisplayMetrics().density);
+        return (int) (pixels * MonthPickerPackage.context.getResources().getDisplayMetrics().density);
     }
 }

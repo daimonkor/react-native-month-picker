@@ -8,7 +8,7 @@ import com.facebook.react.uimanager.ViewManager;
 import java.util.Arrays;
 import java.util.List;
 
-public class DatePickerPackage implements ReactPackage {
+public class MonthPickerPackage implements ReactPackage {
     public static ReactApplicationContext context;
 
     @Override
