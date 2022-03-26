@@ -10,8 +10,6 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-import com.reactnativemonthpicker.R;
-
 public class DerivedData {
   private final State state;
 
@@ -79,11 +77,11 @@ public class DerivedData {
   public int getRootLayout() {
     switch (state.getVariant()) {
       case nativeAndroid:
-        return R.layout.native_picker;
+        return R.layout.native_month_picker;
       case iosClone:
-        return R.layout.ios_clone;
+        return R.layout.ios_clone_month_picker;
       default:
-        return R.layout.ios_clone;
+        return R.layout.ios_clone_month_picker;
     }
   }
 

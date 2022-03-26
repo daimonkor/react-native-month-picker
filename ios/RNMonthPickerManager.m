@@ -5,14 +5,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#import "RNDatePickerManager.h"
+#import "RNMonthPickerManager.h"
 #import <React/RCTLog.h>
 
 #import "RCTConvert.h"
 #import "NTMonthYearPicker.h"
 
 
-@implementation RNDatePickerManager
+@implementation RNMonthPickerManager
 
 RCT_EXPORT_MODULE(MonthPickerView)
 
