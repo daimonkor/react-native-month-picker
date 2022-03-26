@@ -1,13 +1,18 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { MonthPicker } from 'react-native-month-picker';
-import { useState } from 'react';
 
 export default function App() {
   const [date, setDate] = useState(new Date());
+  console.log('current date', date);
   return (
     <View style={styles.container}>
-      <MonthPicker date={date} onDateChange={setDate} textColor={'red'} />
+      <MonthPicker
+        date={date}
+        onDateChange={setDate}
+        textColor={'red'}
+        locale={'en'}
+      />
     </View>
   );
 }

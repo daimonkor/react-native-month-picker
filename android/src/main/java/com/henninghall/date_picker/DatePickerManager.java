@@ -21,7 +21,7 @@ import java.lang.reflect.Method;
 import java.util.Map;
 
 public class DatePickerManager extends SimpleViewManager<PickerView>  {
-  private static final String REACT_CLASS = "DatePickerView";
+  private static final String REACT_CLASS = "MonthPickerView";
   private static final int SCROLL = 1;
 
   @Override

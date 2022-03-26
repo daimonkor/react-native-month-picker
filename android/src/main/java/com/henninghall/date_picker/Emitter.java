@@ -23,7 +23,7 @@ public class Emitter {
         WritableMap event = Arguments.createMap();
         String dateString = Utils.dateToIso(date);
         event.putString("date", dateString);
-        event.putString("timestamp", String.valueOf(date.getTime().getTime()));
+        event.putDouble("timestamp", (double) date.getTime().getTime());
         eventEmitter().receiveEvent(view.getId(), "dateChange", event);
     }
 

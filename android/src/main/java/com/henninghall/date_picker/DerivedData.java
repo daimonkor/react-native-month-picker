@@ -8,6 +8,7 @@ import com.henninghall.date_picker.models.WheelType;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.TimeZone;
 
 import com.reactnativedatepicker.R;
 
@@ -86,10 +87,14 @@ public class DerivedData {
     }
   }
 
-  public String getLastDate() {
+  public Double getLastDate() {
     Calendar lastSelectedDate = state.getLastSelectedDate();
-    String initialDate = state.getIsoDate();
-    if (lastSelectedDate != null) return Utils.dateToIso(lastSelectedDate);
+    lastSelectedDate.setTimeZone(TimeZone.getTimeZone("UTC"));
+    Double initialDate = state.getIsoDate();
+    if (lastSelectedDate != null) {
+      Log.e("TAG", String.format("SSS %s", lastSelectedDate.getTime().getTime() ));
+      return (double) lastSelectedDate.getTime().getTime();
+    }
     return initialDate;
   }
 }

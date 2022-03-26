@@ -1,35 +1,35 @@
-export function colorToHex(c) {
-  if (c === undefined) return c
-  if (c === "none") return c
-  if (c.includes('rgb')) return rgb2hex(c)
+export const colorToHex: any = (c: any) => {
+  if (c === undefined) return c;
+  if (c === 'none') return c;
+  if (c.includes('rgb')) return rgb2hex(c);
   if (c.includes('#')) {
-    if (!isValidHex(c)) throw Error('Invalid color: ' + c)
-    if (c.length === 4) return '#' + c[1] + c[1] + c[2] + c[2] + c[3] + c[3]
-    if (c.length === 7) return c
+    if (!isValidHex(c)) throw Error('Invalid color: ' + c);
+    if (c.length === 4) return '#' + c[1] + c[1] + c[2] + c[2] + c[3] + c[3];
+    if (c.length === 7) return c;
   }
-  const colorFromName = colourNameToHex(c)
-  if (colorFromName) return colorFromName
-  throw Error('Invalid color: ' + c)
+  const colorFromName = colourNameToHex(c);
+  if (colorFromName) return colorFromName;
+  throw Error('Invalid color: ' + c);
+};
+
+function isValidHex(color: string) {
+  return /^#([0-9A-Fa-f]{3}){1,2}$/i.test(color);
 }
 
-function isValidHex(color) {
-  return /^#([0-9A-Fa-f]{3}){1,2}$/i.test(color)
-}
-
-function rgb2hex(rgb) {
+function rgb2hex(rgb: any) {
   rgb = rgb.match(
     /^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i
-  )
+  );
   return rgb && rgb.length === 4
     ? '#' +
         ('0' + parseInt(rgb[1], 10).toString(16)).slice(-2) +
         ('0' + parseInt(rgb[2], 10).toString(16)).slice(-2) +
         ('0' + parseInt(rgb[3], 10).toString(16)).slice(-2)
-    : ''
+    : '';
 }
 
-function colourNameToHex(color) {
-  var colors = {
+const colourNameToHex = (color: string) => {
+  const colors = {
     aliceblue: '#f0f8ff',
     antiquewhite: '#faebd7',
     aqua: '#00ffff',
@@ -171,6 +171,6 @@ function colourNameToHex(color) {
     whitesmoke: '#f5f5f5',
     yellow: '#ffff00',
     yellowgreen: '#9acd32',
-  }
-  return colors[color.toLowerCase()]
-}
+  };
+  return (colors as any)?.[color.toLowerCase()] as string;
+};

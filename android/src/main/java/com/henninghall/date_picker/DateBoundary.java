@@ -6,7 +6,7 @@ import java.util.TimeZone;
 public class DateBoundary {
     private Calendar date;
 
-    DateBoundary(TimeZone timezone, String date) {
+    DateBoundary(TimeZone timezone, Double date) {
         if(date == null) return;
         Calendar cal = Utils.isoToCalendar(date, timezone);
         this.date = Utils.getTruncatedCalendarOrNull(cal);

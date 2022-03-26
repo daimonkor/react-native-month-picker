@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
@@ -27,16 +28,13 @@ public class Utils {
         return PrettyTime.of(locale).printToday();
     }
 
-    public static Calendar isoToCalendar(String dateString, TimeZone timeZone)  {
-        if(dateString == null) return null;
-        try {
-            Calendar calendar = Calendar.getInstance(timeZone);
-            calendar.setTime(getIsoUTCFormat().parse(dateString));
-            return calendar;
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return null;
-        }
+    public static Calendar isoToCalendar(Double timestamp, TimeZone timeZone)  {
+        if(timestamp == null) return null;
+      Calendar calendar = Calendar.getInstance(timeZone);
+      calendar.setTimeZone(timeZone);
+
+      calendar.setTime(new Date(timestamp.longValue()));
+      return calendar;
     }
 
     public static String dateToIso(Calendar date) {

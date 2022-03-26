@@ -165,6 +165,7 @@ const NSInteger kMaxYear = 10000;
 - (NSCalendar *)calendar {
     if( _calendar == nil ) {
         _calendar = [NSCalendar currentCalendar];
+        _calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     }
     return _calendar;
 }

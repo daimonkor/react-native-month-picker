@@ -96,7 +96,7 @@ public class PickerView extends RelativeLayout {
         uiManager.scroll(wheelIndex, scrollTimes);
     }
 
-    public String getDate() {
+    public Double getDate() {
         return state.derived.getLastDate();
     }
 

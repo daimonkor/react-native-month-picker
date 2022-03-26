@@ -69,12 +69,12 @@ public class State {
     }
 
     public Calendar getMinimumDate() {
-        DateBoundary db = new DateBoundary(getTimeZone(), (String) minimumDateProp.getValue());
+        DateBoundary db = new DateBoundary(getTimeZone(), (Double) minimumDateProp.getValue());
         return db.get();
     }
 
     public Calendar getMaximumDate() {
-        DateBoundary db = new DateBoundary(getTimeZone(), (String) maximumDateProp.getValue());
+        DateBoundary db = new DateBoundary(getTimeZone(), (Double) maximumDateProp.getValue());
         return db.get();
     }
 
@@ -82,8 +82,8 @@ public class State {
         return TimeZone.getTimeZone("UTC");
     }
 
-    public String getIsoDate() {
-        return (String) dateProp.getValue();
+    public Double getIsoDate() {
+        return dateProp.getValue();
     }
 
     public Calendar getDate() {

@@ -14,7 +14,7 @@
 
 @implementation RNDatePickerManager
 
-RCT_EXPORT_MODULE(DatePickerView)
+RCT_EXPORT_MODULE(MonthPickerView)
 
 RCT_EXPORT_METHOD(addListener : (NSString *)eventName) {
   // Keep: Required for RN built in Event Emitter Calls.
